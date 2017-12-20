@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Add Person
+    </ion-title>
+  </ion-navbar>
+  </ion-header>
+
+   <ion-content padding>
+    <ion-list > 
+  
+
+    
+
+          <div class= container>
+          
+          <ion-item>
+            <ion-label floating>First name</ion-label>
+            <ion-input type="text" [(ngModel)]= "firstname" ></ion-input>
+          </ion-item>
+        
+         
+          
+         <ion-item>
+            <ion-label floating  >Last name</ion-label>
+            <ion-input type="text"  [(ngModel)]= "lastname"></ion-input>
+          </ion-item>
+        
+          
+          
+              <ion-item>
+                  <ion-label floating>City</ion-label>
+                  <ion-input type="text"  [(ngModel)]= "city"></ion-input>
+                </ion-item>
+
+          <ion-item>
+          <ion-label floating>Country</ion-label>
+          <ion-input type="text"  [(ngModel)]= "country"></ion-input>
+        </ion-item>
+      
+    
+        <ion-item>
+        <ion-label floating> Phone</ion-label>
+        <ion-input type="text" [(ngModel)]= "phone" placeholder="رقم الهاتف"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating> Email </ion-label>
+        <ion-input type="text" [(ngModel)]= "email"></ion-input>
+      </ion-item>
+
+      <ion-item>        
+          <ion-label floating> Salary </ion-label>
+          <ion-input type="text" [(ngModel)]= "salary"></ion-input>        
+        </ion-item>
+           
+      
+       
+
+
+    </div>
+    
+           <button ion-button full large class= container (click)="createEmployee(firstname,lastname,city,country,phone,email,salary)" >
+          <ion-icon name=ios-add-circle large ></ion-icon>
+         Add</button>
+
+       
+         </ion-list> 
+
+
+
+        
+
+</ion-content>
+<!-- <textarea  type="text" lang="ar" dir="rtl" [(ngModel)]= "firstname" placeholder="قم بكتابة نبذة مختصرة عن حالتك" >    </textarea> -->
