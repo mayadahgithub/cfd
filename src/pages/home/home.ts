@@ -26,23 +26,23 @@ export class HomePage {
  employees: Observable<any[]>;
  
  
- items$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>; //added
- size$: BehaviorSubject<string|null>;//added
+ items$: Observable<AngularFireAction<firebase.database.DataSnapshot>[]>; 
+ size$: BehaviorSubject<string|null>;
  
   
 
   constructor(public navCtrl: NavController,public af:AngularFireDatabase) {
    
-    this.itemsRef =  af.list('/people')
+    this.itemsRef =  af.list('/employ')
     this.employees = this.itemsRef.valueChanges() ;
  
    
- //added
-    this.size$ = new BehaviorSubject(null); //added
-    this.items$ = this.size$.switchMap(size =>  //added
-      af.list('/people', ref =>  //added
-        size ? ref.orderByChild('size').equalTo(size) : ref  //added
-      ).snapshotChanges() //added
+ 
+    this.size$ = new BehaviorSubject(null); 
+    this.items$ = this.size$.switchMap(size =>  
+      af.list('employ', ref => 
+        size ? ref.orderByChild('size').equalTo(size) : ref  
+      ).snapshotChanges() 
     );
   
     this.items$.subscribe(actions => {
@@ -57,17 +57,15 @@ export class HomePage {
      
  
   
- itemSelected(key, firstname, lastname, country, city, phone, salary, email){
-   // console.log(key, firstname, lastname, country, city, phone, salary, email);
+ itemSelected(key, firstname, lastname,address, phone,infor ){
+   // console.log(key, firstname, lastname, address, phone, infor);
    this.navCtrl.push(ContactPage,{
      key : key,
      firstname : firstname,
      lastname : lastname,
-     country : country,
-     city : city , 
-     phone : phone , 
-     salary : salary , 
-     email : email 
+     address :address,    
+     phone : phone ,
+     infor:infor
          });
 
 
@@ -82,7 +80,5 @@ export class HomePage {
 
   }
 
- //deleteEmployee(id){
-  //this.itemsRef.remove(id);
-  //}
+ 
  }

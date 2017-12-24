@@ -4,8 +4,7 @@ import { NavController } from 'ionic-angular';
 import { AngularFireDatabase ,AngularFireList  } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { HomePage } from '../home/home';
-//import *as firebease from 'firebase';
-//import {environment} from '../../'
+
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -15,20 +14,19 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController , public db:AngularFireDatabase) {
    
- this.peoplelist=db.list('people')
+ this.peoplelist=db.list('/employ')
   }
   
   
- createEmployee(firstname,lastname,city,country,phone,email, salary){
+ createEmployee(firstname,lastname, address,phone,infor){
   this.peoplelist.push({
-   key_id: new Date().getTime(),
+    key_id: new Date().getTime(),
       firstname :firstname ,
         lastname :lastname,
-         city: city,
-        country: country,
-          phone : phone,
-          email :email,
-          salary:salary
+        address:address,
+        phone : phone,
+        infor:infor      
+          
         }).then(newPerson => {
 
           this.navCtrl.push(HomePage);

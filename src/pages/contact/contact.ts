@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-//import { NavController } from 'ionic-angular';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
@@ -14,11 +13,9 @@ export class ContactPage {
     key : '',
     firstname : '',
     lastname : '',
-    country : '',
-    city : '' , 
-    phone : '' , 
-    salary : '' , 
-    email : '' 
+    address:'',
+    phone:'',
+    infor : ''
   }
   
 
@@ -27,13 +24,10 @@ export class ContactPage {
     this.myInfo.key = this.navParams.get('key')
     this.myInfo.firstname = this.navParams.get('firstname')
     this.myInfo.lastname = this.navParams.get('lastname')
-    this.myInfo.country = this.navParams.get('country')
-    this.myInfo.city = this.navParams.get('city')
-    this.myInfo.phone = this.navParams.get('phone')
-    this.myInfo.salary = this.navParams.get('salary')
-    this.myInfo.email = this.navParams.get('email')
-
-
+    this.myInfo.address = this.navParams.get(' address')
+    this.myInfo. phone = this.navParams.get(' phone')
+    this.myInfo.infor = this.navParams.get('infor')
+    
   }
 
  
