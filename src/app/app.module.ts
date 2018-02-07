@@ -13,19 +13,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
  import { AngularFireModule} from 'angularfire2';
- import { AngularFireDatabaseModule } from 'angularfire2/database';
+ import { AngularFireDatabaseModule,AngularFireDatabase } from 'angularfire2/database';
  import { AngularFireAuthModule } from 'angularfire2/auth';
  import { AngularFirestore  } from 'angularfire2/firestore';
-///////add new
-//import { FirebaseApp } from '@firebase/app-types';
-//import { FirebaseAuth } from '@firebase/auth-types';
-//import { FirebaseDatabase } from '@firebase/database-types';
-//import { FirebaseMessaging } from '@firebase/messaging-types';
-//import { FirebaseStorage } from '@firebase/storage-types';
-//import { FirebaseFirestore } from '@firebase/firestore-types';
- ///////////
 
- export const  config = {
+
+ export const  firebaseConfig = {
   apiKey: "AIzaSyB-ngYBJRSxJIkcQYRknhny-r7ydq-gUG8",
   authDomain: "cfdp-294a0.firebaseapp.com",
   databaseURL: "https://cfdp-294a0.firebaseio.com",
@@ -46,19 +39,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     EditpersonPage
   ],
   imports: [
-    ///addnew
-   // FirebaseApp,
-    //FirebaseAuth,
-    //FirebaseDatabase,
-    //FirebaseMessaging,
-    //FirebaseStorage,
-    //FirebaseFirestore,
-    ////
+    
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule ,
+    AngularFireAuthModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [   
@@ -70,7 +56,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     EditpersonPage
   ],
   providers: [
-   
+    AngularFireDatabase,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

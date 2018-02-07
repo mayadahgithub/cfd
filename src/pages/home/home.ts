@@ -18,9 +18,7 @@ import { ContactPage } from '../contact/contact';
 })
 
 export class HomePage {
-  //search/
- 
- //** */
+  
  
  itemsRef: AngularFireList<any>;
  employees: Observable<any[]>;
@@ -50,7 +48,7 @@ export class HomePage {
        console.log(action.type);
        console.log(action.key);
        console.log(action.payload.val());
-     })  ; 
+     }); 
   
    });
  }
@@ -66,19 +64,12 @@ export class HomePage {
      address :address,    
      phone : phone ,
      infor:infor
-         });
-
-
-   //**search**/
-   
-  
-   //*** */
-
-  
+         });  
 
 
 
   }
+
 
  
  }

@@ -13,38 +13,42 @@
 
     <ion-item>
       <ion-avatar item-start>
-          <img src="assets/imgs/home.svg">
-
+          <img src="assets/imgs/img/home.svg">
       </ion-avatar>
-        <h6> <p> {{myInfo.firstname}} {{myInfo.lastname}} </p></h6>     
-    </ion-item>
 
-    <img src="assets/imgs/info.jpeg" >
+       <h1> {{myInfo.firstname}} {{myInfo.lastname}}</h1>    
+      </ion-item>
+
+    <img src="assets/imgs/img/info.jpeg" >
    
 
     <ion-card-content>
-      <h1> {{myInfo.address}}  {{myInfo.phone}} </h1>
+      <h1> {{myInfo.address}}  {{myInfo.phone}} </h1><br>
          <h1>  {{myInfo.infor}} </h1>
     </ion-card-content>
   
     <ion-row>
+
       <ion-col>
         <button ion-button icon-left clear small>
           <ion-icon name="thumbs-up"></ion-icon>
           <div>12 Likes</div>
         </button>
       </ion-col>
+
       <ion-col>
         <button ion-button icon-left clear small>
           <ion-icon name="text"></ion-icon>
           <div>4 Comments</div>
         </button>
       </ion-col>
+
       <ion-col center text-center>
         <ion-note>
           11h ago
         </ion-note>
       </ion-col>
+
     </ion-row>
   
   </ion-card> 

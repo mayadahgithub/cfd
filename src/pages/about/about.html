@@ -7,15 +7,20 @@
   </ion-header>
 
    <ion-content padding>
-    <ion-list > 
-  
+   
+     
 
+        
+       <ion-list > 
+         
+  
+        
     
             
-          <div class= container >
+          <div class= "container" >
       
-          <ion-item  >               
-         <ion-label>الاسم الاول: </ion-label>           
+          <ion-item class= "style"  >               
+         <ion-label  >الاسم الاول: </ion-label>           
             <ion-input  [(ngModel)]= "firstname" ></ion-input>       
           </ion-item>
           
@@ -41,8 +46,8 @@
        
       <ion-item >
         <ion-label > اكتب نبذة مختصرة عن حالتك: </ion-label>
-        <ion-textarea   type="text" [(ngModel)]= "infor" >  </ion-textarea>
-      </ion-item>
+        <ion-textarea   type="text" [(ngModel)]= "infor"  style="height:100px"> </ion-textarea> 
+        </ion-item >
 
      <!-- <ion-item>
         <ion-label >: اكتب نبذة مختصرة</ion-label>
@@ -50,22 +55,24 @@
       </ion-item>-->
       
       
-    </div>
-  
+          </div>
+    
+    
+      <button ion-button full large class= container (click)="createEmployee(firstname,lastname,address,phone,
+      infor)">
+      <ion-icon name=ios-add-circle large > </ion-icon>
+      اضافة </button>
 
 
     
-    
-           <button ion-button full large class= container (click)="createEmployee(firstname,lastname,address,phone,
-           infor)">
-          <ion-icon name=ios-add-circle large > </ion-icon>
-           اضافة </button>
-        
-       
-         </ion-list> 
-
+      <button ion-button color="danger" full large class= container (click)="deleteEmployee(item.payload.key)">
+      <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+      حذف </button>
 
 
         
+
+    </ion-list >
 
           </ion-content>
+       

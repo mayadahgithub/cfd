@@ -4,47 +4,40 @@
       <ion-title>حالات انسانية</ion-title>      
    
 
- <!--search-->
-
-<!--**-->
-
+ 
 </ion-navbar>
   </ion-header>
 
 
 
   
-  <ion-content>
+  <ion-content >
     
   
     <ion-list>
         
   
  
-        <button ion-item *ngFor="let item of items$   | async json" (click)="itemSelected(item.payload.key,item.payload.val().firstname,item.payload.val().lastname,item.payload.val().address,item.payload.val().phone,item.payload.val().infor)">
+        <button class="style" ion-item *ngFor="let item of items$   | async json" (click)="itemSelected(item.payload.key,item.payload.val().firstname,item.payload.val().lastname,item.payload.val().address,item.payload.val().phone,item.payload.val().infor)">
             
             
 
 
         <ion-avatar item-start>          
-          <img src="assets/imags/peson.svg">
+          <img src="assets/imgs/img/per.png">  
         </ion-avatar>
 
 
         <ion-note> key = {{item.payload.key}}</ion-note>
-          <h2>name: {{item.payload.val().firstname}} {{item.payload.val().lastname}}</h2>
+          <h2>الاسم: {{item.payload.val().firstname}} {{item.payload.val().lastname}}</h2>
         
-        <h2> address:{{item.payload.val().address}}</h2> 
-        <h2> phone:</h2>
-       <h2> {{item.payload.val().phone}}  </h2>  
+        <h2> العنوان:{{item.payload.val().address}}</h2> 
+            <h2> رقم الهاتف:</h2>
+       <h2>  {{item.payload.val().phone}}  </h2> 
+       <ion-note> <h2>  اضغط لمعرفة المزيد </h2></ion-note>
          
                   
            </button>
+          </ion-list> 
 
-
-   
-
-
-    
-  </ion-list> 
-</ion-content>
+     </ion-content>

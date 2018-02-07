@@ -24,8 +24,8 @@ export class ContactPage {
     this.myInfo.key = this.navParams.get('key')
     this.myInfo.firstname = this.navParams.get('firstname')
     this.myInfo.lastname = this.navParams.get('lastname')
-    this.myInfo.address = this.navParams.get(' address')
-    this.myInfo. phone = this.navParams.get(' phone')
+    this.myInfo.address = this.navParams.get('address')
+    this.myInfo. phone = this.navParams.get('phone')
     this.myInfo.infor = this.navParams.get('infor')
     
   }

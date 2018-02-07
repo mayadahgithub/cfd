@@ -10,7 +10,13 @@ import { HomePage } from '../home/home';
   templateUrl: 'about.html'
 })
 export class AboutPage {
- peoplelist: AngularFireList<any>;
+  //
+  itemsRef: AngularFireList<any>;
+  employees: Observable<any[]>;
+
+  //
+
+ peoplelist: AngularFireList<any>; 
 
   constructor(public navCtrl: NavController , public db:AngularFireDatabase) {
    
@@ -29,7 +35,29 @@ export class AboutPage {
           
         }).then(newPerson => {
 
-          this.navCtrl.push(HomePage);
-        })
+          this.navCtrl.push(HomePage);})
+    
+      }
+
+///
+
+deleteEmploye(firstname,lastname, address,phone,infor){
+  this.peoplelist.remove({
+    key_id: new Date().getTime(),
+      firstname :firstname ,
+        lastname :lastname,
+        address:address,
+        phone : phone,
+        infor:infor      
+          
+        }).then(newPerson => {
+
+          this.itemsRef.remove(id);})
+      }
+
+//////
+
 }
-}
+   //deleteEmployee(id){
+  //this.itemsRef.remove(id);
+//}
